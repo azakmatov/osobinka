@@ -1,0 +1,11 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /login-admin/
+Disallow: /login/
+Disallow: /registry/
+Disallow: /img/
+Disallow: /images/
+Disallow: /files/
+Allow: /files/*_thumb_*
+
+Sitemap: https://osobinka.su/sitemap.xml
