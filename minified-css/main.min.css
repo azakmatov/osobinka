@@ -188,6 +188,10 @@
   /*min-height: 100px;*/
   height: 100px;
   border-radius: 19px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 19px;
 }
 
 .swiper-img {
@@ -196,7 +200,7 @@
   border-radius: 19px;
 }
 
-.design .swiper-img.blur {
+.design .swiper-image.blur {
   /*filter: progid:DXImageTransform.Microsoft.Blur(pixelRadius=5);*/
   opacity: .5;
 }
@@ -2088,7 +2092,7 @@
     min-height: 200px;
   }
 
-  .design .swiper-img.blur {
+  .design .swiper-image.blur {
     opacity: 1;
   }
 

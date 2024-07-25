@@ -517,56 +517,56 @@
         <div class="swiper-wrapper">
           <div class="swiper-slide">
             <div class="swiper-title">Бакалея</div>
-            <div class="swiper-image">
-              <img src="images/main/swiper-design-1.webp" alt="swipe-image" class="swiper-img">
+            <div class="swiper-image" style="background-image: url('images/main/swiper-design-1.webp')">
+<!--              <img src="images/main/swiper-design-1.webp" alt="swipe-image" class="swiper-img">-->
             </div>
           </div>
           <div class="swiper-slide">
             <div class="swiper-title">Детское питание</div>
-            <div class="swiper-image">
-              <img src="images/main/swiper-design-2.webp" alt="swipe-image" class="swiper-img blur">
+            <div class="swiper-image blur" style="background-image: url('images/main/swiper-design-2.webp')">
+<!--              <img src="images/main/swiper-design-2.webp" alt="swipe-image" class="swiper-img blur">-->
             </div>
           </div>
           <div class="swiper-slide">
             <div class="swiper-title">Замороженные продукты</div>
-            <div class="swiper-image">
-              <img src="images/main/swiper-design-3.webp" alt="swipe-image" class="swiper-img blur">
+            <div class="swiper-image blur" style="background-image: url('images/main/swiper-design-3.webp')">
+<!--              <img src="images/main/swiper-design-3.webp" alt="swipe-image" class="swiper-img blur">-->
             </div>
           </div>
           <div class="swiper-slide">
             <div class="swiper-title">Кондитерские изделия</div>
-            <div class="swiper-image">
-              <img src="images/main/swiper-design-4.webp" alt="swipe-image" class="swiper-img blur">
+            <div class="swiper-image blur" style="background-image: url('images/main/swiper-design-4.webp')">
+<!--              <img src="images/main/swiper-design-4.webp" alt="swipe-image" class="swiper-img blur">-->
             </div>
           </div>
           <div class="swiper-slide">
             <div class="swiper-title">Консервация</div>
-            <div class="swiper-image">
-              <img src="images/main/swiper-design-5.webp" alt="swipe-image" class="swiper-img blur">
+            <div class="swiper-image blur" style="background-image: url('images/main/swiper-design-5.webp')">
+<!--              <img src="images/main/swiper-design-5.webp" alt="swipe-image" class="swiper-img blur">-->
             </div>
           </div>
           <div class="swiper-slide">
             <div class="swiper-title">Масло - жировые</div>
-            <div class="swiper-image">
-              <img src="images/main/swiper-design-6.webp" alt="swipe-image" class="swiper-img blur">
+            <div class="swiper-image blur" style="background-image: url('images/main/swiper-design-6.webp')">
+<!--              <img src="images/main/swiper-design-6.webp" alt="swipe-image" class="swiper-img blur">-->
             </div>
           </div>
           <div class="swiper-slide">
             <div class="swiper-title">Молочные продукты</div>
-            <div class="swiper-image">
-              <img src="images/main/swiper-design-7.webp" alt="swipe-image" class="swiper-img blur">
+            <div class="swiper-image blur" style="background-image: url('images/main/swiper-design-7.webp')">
+<!--              <img src="images/main/swiper-design-7.webp" alt="swipe-image" class="swiper-img blur">-->
             </div>
           </div>
           <div class="swiper-slide">
             <div class="swiper-title">Напитки безалкогольные</div>
-            <div class="swiper-image">
-              <img src="images/main/swiper-design-8.webp" alt="swipe-image" class="swiper-img blur">
+            <div class="swiper-image blur" style="background-image: url('images/main/swiper-design-8.webp')">
+<!--              <img src="images/main/swiper-design-8.webp" alt="swipe-image" class="swiper-img blur">-->
             </div>
           </div>
           <div class="swiper-slide">
             <div class="swiper-title">Хлеб и хлебопродукты</div>
-            <div class="swiper-image">
-              <img src="images/main/swiper-design-9.webp" alt="swipe-image" class="swiper-img blur">
+            <div class="swiper-image blur" style="background-image: url('images/main/swiper-design-9.webp')">
+<!--              <img src="images/main/swiper-design-9.webp" alt="swipe-image" class="swiper-img blur">-->
             </div>
           </div>
         </div>
@@ -2275,15 +2275,19 @@
   });
 
 
+  const conceptTitle = document.getElementById('concept-title');
+  const conceptImg = document.getElementById('concept-img');
   const swiperSlide = document.querySelectorAll('.swiper-slide');
-  const swiperImg = document.querySelectorAll('.swiper-img');
+  const swiperImage = document.querySelectorAll('.swiper-image');
 
   swiperSlide.forEach((item) => {
     item.addEventListener('click', () => {
-      document.getElementById('concept-title').innerText = item.firstElementChild.textContent;
-      const imageElement = item.children[1].firstElementChild;
-      document.getElementById('concept-img').src = imageElement.src;
-      swiperImg.forEach((el) => {
+      conceptTitle.innerText = item.firstElementChild.textContent;
+      // conceptTitle.innerText = item;
+      const imageElement = item.children[1];
+      conceptImg.src = getComputedStyle(imageElement).backgroundImage.slice(5, -2);
+      // console.log(getComputedStyle(imageElement).backgroundImage.slice(5, -2));
+      swiperImage.forEach((el) => {
         if (!el.classList.contains('blur')) {
           el.classList.add('blur');
         }
